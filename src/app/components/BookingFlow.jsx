@@ -4,14 +4,14 @@ import { Progress } from './ui/progress';
 
 export function BookingFlow() {
   const [step, setStep] = useState(1);
-  const [selectedProfile, setSelectedProfile] = useState<string>('');
+  const [selectedProfile, setSelectedProfile] = useState('');
   const [symptoms, setSymptoms] = useState('');
-  const [aiSuggestion, setAiSuggestion] = useState<any>(null);
+  const [aiSuggestion, setAiSuggestion] = useState(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
 
   const handleSymptomAnalysis = () => {
     setIsAnalyzing(true);
-    
+
     // Simulate AI analysis
     setTimeout(() => {
       setAiSuggestion({
@@ -49,9 +49,9 @@ export function BookingFlow() {
             </div>
             <span className="font-['Inter']">Select Profile</span>
           </div>
-          
+
           <div className="flex-1 h-1 mx-4 bg-gray-200">
-            <div 
+            <div
               className="h-full bg-[#0E4D45] transition-all duration-500"
               style={{ width: step >= 2 ? '100%' : '0%' }}
             />
@@ -67,7 +67,7 @@ export function BookingFlow() {
           </div>
 
           <div className="flex-1 h-1 mx-4 bg-gray-200">
-            <div 
+            <div
               className="h-full bg-[#0E4D45] transition-all duration-500"
               style={{ width: step >= 3 ? '100%' : '0%' }}
             />
@@ -90,7 +90,7 @@ export function BookingFlow() {
         {step === 1 && (
           <div className="space-y-6 animate-in fade-in duration-500">
             <h2 className="font-['Playfair_Display'] text-2xl mb-6">Who is this appointment for?</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <button
                 onClick={() => setSelectedProfile('myself')}
@@ -167,7 +167,7 @@ export function BookingFlow() {
                 rows={4}
                 className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E4D45] font-['Inter']"
               />
-              
+
               <button
                 onClick={handleSymptomAnalysis}
                 disabled={!symptoms || isAnalyzing}
@@ -246,7 +246,7 @@ export function BookingFlow() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
                 <h3 className="font-['Inter'] text-lg mb-4">Appointment Details</h3>
-                
+
                 <div className="space-y-4">
                   <div>
                     <div className="text-sm text-gray-500 mb-1 font-['Inter']">Patient</div>

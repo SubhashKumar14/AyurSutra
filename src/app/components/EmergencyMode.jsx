@@ -1,18 +1,18 @@
-import { AlertCircle, Ambulance, Phone, MessageSquare, MapPin, Clock, Navigation } from 'lucide-react';
+import { AlertCircle, Ambulance, Phone, MessageSquare, MapPin, Navigation } from 'lucide-react';
 import { useState } from 'react';
-import emergencyMapImg from 'figma:asset/73af87f18d41b11b8986240287523d079caee03a.png';
+import emergencyMapImg from '../../assets/73af87f18d41b11b8986240287523d079caee03a.png';
 
 export function EmergencyMode() {
   const [isDispatched, setIsDispatched] = useState(false);
   const [emergencyDescription, setEmergencyDescription] = useState('');
-  const [chatMessages, setChatMessages] = useState<Array<{type: 'ai' | 'user', text: string}>>([
+  const [chatMessages, setChatMessages] = useState([
     { type: 'ai', text: 'Emergency AI Responder here. I\'ve received your alert. Can you describe the emergency?' }
   ]);
   const [chatInput, setChatInput] = useState('');
 
   const handleDispatch = () => {
     setIsDispatched(true);
-    setChatMessages(prev => [...prev, 
+    setChatMessages(prev => [...prev,
       { type: 'ai', text: 'Ambulance dispatched! Vehicle #AMB-04 is en route. ETA: 5 minutes. Stay calm, help is on the way.' }
     ]);
   };
@@ -21,10 +21,10 @@ export function EmergencyMode() {
     if (!chatInput.trim()) return;
     setChatMessages(prev => [...prev, { type: 'user', text: chatInput }]);
     setChatInput('');
-    
+
     // Simulate AI response
     setTimeout(() => {
-      setChatMessages(prev => [...prev, 
+      setChatMessages(prev => [...prev,
         { type: 'ai', text: 'I understand. Stay where you are. The ambulance is just 3 minutes away. Can you tell me if the patient is conscious?' }
       ]);
     }, 1000);
@@ -151,7 +151,7 @@ export function EmergencyMode() {
                   placeholder="Type your message..."
                   className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 font-['Inter']"
                 />
-                <button 
+                <button
                   onClick={sendMessage}
                   className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
                 >
@@ -177,12 +177,12 @@ export function EmergencyMode() {
             </div>
 
             <div className="relative">
-              <img 
+              <img
                 src={emergencyMapImg}
                 alt="Emergency Map"
                 className="w-full h-96 object-cover"
               />
-              
+
               {isDispatched && (
                 <div className="absolute top-4 left-4 bg-white rounded-lg shadow-lg p-3 animate-in fade-in duration-500">
                   <div className="flex items-center gap-2 mb-2">

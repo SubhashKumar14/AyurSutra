@@ -1,5 +1,5 @@
-import { Users, Activity, DollarSign, UserCheck, TrendingUp, MapPin, Ambulance, Brain, AlertTriangle, Edit } from 'lucide-react';
-import emergencyMapImg from 'figma:asset/73af87f18d41b11b8986240287523d079caee03a.png';
+import { Users, Activity, DollarSign, UserCheck, TrendingUp, Ambulance, Brain, AlertTriangle, Edit } from 'lucide-react';
+import emergencyMapImg from '../../assets/73af87f18d41b11b8986240287523d079caee03a.png';
 
 export function AdminDashboard() {
   const stats = [
@@ -100,8 +100,8 @@ export function AdminDashboard() {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className={`px-3 py-1 rounded-full text-xs font-['Inter'] ${
-                          staff.status === 'Active' 
-                            ? 'bg-green-100 text-green-700' 
+                          staff.status === 'Active'
+                            ? 'bg-green-100 text-green-700'
                             : 'bg-gray-100 text-gray-700'
                         }`}>
                           {staff.status}
@@ -133,7 +133,7 @@ export function AdminDashboard() {
 
             <div className="p-6">
               <div className="mb-4">
-                <img 
+                <img
                   src={emergencyMapImg}
                   alt="Fleet Map"
                   className="w-full h-64 object-cover rounded-xl"
@@ -142,11 +142,11 @@ export function AdminDashboard() {
 
               <div className="space-y-3">
                 {ambulanceFleet.map((ambulance) => (
-                  <div 
+                  <div
                     key={ambulance.id}
                     className={`p-4 rounded-xl border-2 ${
-                      ambulance.status === 'In Transit' 
-                        ? 'border-red-200 bg-red-50' 
+                      ambulance.status === 'In Transit'
+                        ? 'border-red-200 bg-red-50'
                         : 'border-green-200 bg-green-50'
                     }`}
                   >

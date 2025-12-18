@@ -37,15 +37,15 @@ export function AIAssistant() {
             {sampleMessages.map((msg, idx) => (
               <div key={idx} className="mb-4">
                 <div className={`inline-block p-3 rounded-lg font-['Inter'] ${
-                  msg.type === 'ai' 
-                    ? 'bg-[#E0F2F1] text-[#0E4D45]' 
+                  msg.type === 'ai'
+                    ? 'bg-[#E0F2F1] text-[#0E4D45]'
                     : 'bg-[#0E4D45] text-white ml-auto'
                 }`}>
                   {msg.text}
                 </div>
               </div>
             ))}
-            
+
             {/* Suggested Actions */}
             <div className="mt-4 space-y-2">
               <div className="text-xs text-gray-500 font-['Inter']">Suggested:</div>

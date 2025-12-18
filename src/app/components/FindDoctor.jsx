@@ -1,4 +1,4 @@
-import { Search, Star, MapPin, Calendar } from 'lucide-react';
+import { Search, Star, MapPin } from 'lucide-react';
 
 export function FindDoctor() {
   const doctors = [

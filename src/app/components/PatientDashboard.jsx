@@ -1,13 +1,13 @@
 import { Clock, MapPin, Calendar, Heart, Activity as ActivityIcon, Bell } from 'lucide-react';
 import { Progress } from './ui/progress';
-import dashboardImg from 'figma:asset/eed487263e326d80184c5f185c6c914c4db6226f.png';
+import dashboardImg from '../../assets/eed487263e326d80184c5f185c6c914c4db6226f.png';
 
 export function PatientDashboard() {
-  const currentDate = new Date().toLocaleDateString('en-US', { 
+  const currentDate = new Date().toLocaleDateString('en-US', {
     weekday: 'long',
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
   });
 
   return (
@@ -42,7 +42,7 @@ export function PatientDashboard() {
           <div className="bg-gradient-to-br from-[#0E4D45] to-[#1a6158] text-white rounded-2xl p-6 shadow-lg">
             <div className="text-sm opacity-80 mb-2 font-['Inter']">Current Token</div>
             <div className="text-6xl font-['Playfair_Display'] mb-4">A107</div>
-            
+
             <div className="flex items-center gap-2 mb-4 text-sm opacity-90">
               <Clock className="w-4 h-4" />
               <span className="font-['Inter']">Est. Wait: 15 mins</span>
@@ -133,7 +133,7 @@ export function PatientDashboard() {
 
         <div className="space-y-4">
           <div className="flex items-center gap-4">
-            <img 
+            <img
               src={dashboardImg}
               alt="Therapy"
               className="w-16 h-16 rounded-xl object-cover"
@@ -194,7 +194,7 @@ export function PatientDashboard() {
         </div>
         <div className="mt-4 p-4 bg-white rounded-lg">
           <p className="text-sm text-gray-600 font-['Inter']">
-            <strong>AI Recommendation:</strong> Your predominant Pitta dosha suggests focusing on cooling therapies. 
+            <strong>AI Recommendation:</strong> Your predominant Pitta dosha suggests focusing on cooling therapies.
             Shirodhara is excellent for you. Consider adding coconut oil-based treatments.
           </p>
         </div>

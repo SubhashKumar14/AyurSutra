@@ -1,4 +1,4 @@
-import { Calendar, Clock, CheckCircle, AlertCircle } from 'lucide-react';
+import { Clock } from 'lucide-react';
 import { Progress } from './ui/progress';
 
 export function MyTherapies() {
